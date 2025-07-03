@@ -7,6 +7,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const connectToDb = require('./db/db'); // Importing the database connection function
 const userRoutes = require('./routes/user.routes'); // Importing user routes
+const captainRoutes = require('./routes/captain.routes'); // Importing captain routes
 
 connectToDb(); // Establishing the database connection
 
@@ -20,5 +21,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', userRoutes); // Using user routes
+app.use('/captains', captainRoutes); // Using captain routes
 
 module.exports = app;
